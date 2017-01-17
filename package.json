@@ -1,0 +1,17 @@
+{
+  "name": "custom-deals",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compose:trials": "node ./scripts/trials_query_compose.js",
+    "compose:deals": "node ./scripts/custom_deals_query_compose.js",
+    "compose:childs": "node ./scripts/child_tenants_query_compose.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "pricing-formula": "git+https://github.com/auth0/pricing-formula.git#e430d75f8c6aa0f3186cf3b8df2465d028b3b275"
+  }
+}

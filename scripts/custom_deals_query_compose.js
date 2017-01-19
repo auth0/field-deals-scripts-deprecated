@@ -19,7 +19,8 @@ const manualFilter = (opts) => (entry) => {
   const planUpdate = (entry.plan !== entry.update_plan);
   const validPlan = !!TEMPLATES[entry.update_plan];
   const nonPI = entry.region !== 'pi';
-  const canCompose = planUpdate && validPlan && nonPI;
+  const hasMasterTenant = entry.master_tenant.trim().length > 5;
+  const canCompose = planUpdate && validPlan && nonPI && hasMasterTenant;
 
   if (!canCompose && opts && opts.warn) {
     console.warn('Cannot compose entry %j', entry);

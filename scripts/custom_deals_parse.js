@@ -34,7 +34,7 @@ var listOfUpdates = [].concat.apply([], document.querySelectorAll('tr.dataRow'))
   const region = tenantName.split('@')[1];
   const master_tenant = tds[MASTER_TENANT_INDEX].innerText;
   const plan = tds[PLAN_INDEX].innerText.replace(/\s\(.*\)$/, '').replace(/\s/g, '').toLowerCase();
-  const update_plan = tds[UPDATE_PLAN_INDEX].innerText.replace(/\s\(.*\)$/, '').replace(/\s/g, '').toLowerCase();
+  const update_plan = tds[UPDATE_PLAN_INDEX].innerText.replace(/\s\(.*\)$/, '').replace(/(\s.*)/g, '').toLowerCase();
 
   const users = cleanupNaN({
     social: parseInt(tds[SOCIAL_USERS_INDEX].innerText.replace(/[^\w-_]/, '')),
